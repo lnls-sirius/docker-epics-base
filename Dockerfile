@@ -1,4 +1,4 @@
-FROM lnls/epics-deps:debian-9.2
+FROM lnls/epics-deps:base-7.0-debian-9
 
 RUN cd /tmp/epics-dev && \
     ./run-all.sh -o -i -c -e yes
