@@ -11,6 +11,15 @@ x-environment:
   org.opencontainers.image.vendor: ${VENDOR}
 
 services:
+  base-3.15-debian-9:
+    image: ${DOCKER_IMAGE_PREFIX}/epics-base:base-3.15-debian-9
+    build:
+      context: .
+      dockerfile: "./debian/Dockerfile.base-3.15-debian-9"
+      labels:
+        <<: *default-labels
+        org.opencontainers.image.version: epics-deps:base-3.15-debian-9
+
   base-3.15-debian-9.13:
     image: ${DOCKER_IMAGE_PREFIX}/epics-base:base-3.15-debian-9.13
     build:
